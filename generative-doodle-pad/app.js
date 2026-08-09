@@ -205,11 +205,13 @@
     link.click();
   });
 
-  panelToggle.addEventListener("click", (e) => {
-    if (e.target === collapseBtn) return;
-  });
-  collapseBtn.addEventListener("click", () => {
+  function toggleCollapse() {
     const collapsed = panelBody.classList.toggle("collapsed");
     collapseBtn.textContent = collapsed ? "+" : "–";
+  }
+  panelToggle.addEventListener("click", (e) => {
+    if (e.target === collapseBtn) return;
+    toggleCollapse();
   });
+  collapseBtn.addEventListener("click", toggleCollapse);
 })();
