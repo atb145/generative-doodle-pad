@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Generative Doodle Pad</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="pad"></canvas>
+
+  <div id="panel">
+    <div class="panel-header" id="panelToggle">
+      <span>✦ Doodle Pad</span>
+      <button id="collapseBtn" aria-label="Toggle panel">–</button>
+    </div>
+    <div class="panel-body" id="panelBody">
+      <label class="row">
+        <span>Symmetry</span>
+        <input type="range" id="symmetry" min="1" max="16" value="6" step="1" />
+        <span id="symmetryVal">6</span>
+      </label>
+
+      <label class="row">
+        <span>Brush size</span>
+        <input type="range" id="brush" min="1" max="12" value="3" step="1" />
+        <span id="brushVal">3</span>
+      </label>
+
+      <label class="row">
+        <span>Trail length</span>
+        <input type="range" id="trail" min="2" max="40" value="12" step="1" />
+        <span id="trailVal">12</span>
+      </label>
+
+      <label class="row checkbox-row">
+        <span>Rainbow shift</span>
+        <input type="checkbox" id="rainbow" checked />
+      </label>
+
+      <label class="row checkbox-row">
+        <span>Mirror lines</span>
+        <input type="checkbox" id="showLines" />
+      </label>
+
+      <div class="row buttons">
+        <button id="clearBtn">Clear</button>
+        <button id="saveBtn">Save PNG</button>
+      </div>
+
+      <p class="hint">Draw with your mouse or finger. Try turning symmetry up for kaleidoscope patterns.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
